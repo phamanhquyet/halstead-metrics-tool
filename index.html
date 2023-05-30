@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,11 +19,21 @@
     <main>
         <form id="calculator">
             <label for="code">Enter your code:</label>
-            <textarea id="code" name="code"></textarea>
+            <textarea id="code" name="code"
+                placeholder="Enter or paste your code here (Javascript, C++ or Java)"></textarea>
             <button type="submit">Calculate</button>
+            <div class="file-upload">
+                <label for="file-input" class="file-label">Upload File</label>
+                <input type="file" id="file-input" accept=".js,.java,.cpp" multiple>
+            </div>
         </form>
+        <div id="code-display" class="language-none"></div>
         <div id="results"></div>
+        <canvas id="chart"></canvas>
+        <button id="export-button">Export Results</button>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
