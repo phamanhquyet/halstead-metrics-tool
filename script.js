@@ -17,8 +17,8 @@ async function handleFileUpload(event) {
     const code = await readFile(file);
     const language = detectLanguage(code);
     const metrics = calculateHalsteadMetrics(code, language);
-    displayResults(file.name, code, metrics);
-    displayCode(code);
+    displayResults('.results_display_0', file.name, code, metrics);
+    displayCode('.item_display_0', code);
   } catch (error) {
     alert(`An error occurred while reading the file: ${error.message}`);
   }
@@ -86,10 +86,10 @@ form.addEventListener('submit', function (event) {
   }
   try {
     // document.getElementById('code-display').style.display = 'none';
-    document.getElementById('code-display').innerHTML = '';
+    document.getElementById('code-display').innerHTML = ' ';
     const language = detectLanguage(code);
     const metrics = calculateHalsteadMetrics(code, language);
-    displayResults(null, null, metrics);
+    displayResults('.results_display_0', null, null, metrics);
   } catch (error) {
     alert(`An error occurred: ${error.message}`);
   }
