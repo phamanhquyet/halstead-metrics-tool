@@ -43,8 +43,9 @@ textarea {
   resize: vertical;
 }
 
-button[type="submit"],
-#export-button {
+
+
+button[type="submit"] {
   display: block;
   margin-top: 10px;
   padding: 10px;
@@ -55,16 +56,20 @@ button[type="submit"],
   cursor: pointer;
 }
 
-button[type="submit"]:hover,
-#export-button:hover {
+button[type="submit"]:hover {
   background-color: blue;
   transition: all 0.5s ease;
 
 }
 
+.another-choose {
+  display: block;
+  margin: 20px 0;
+}
 
 /* Style for the results section */
 #results {
+  display: none;
   font-size: 18px;
   line-height: 1.5;
   padding: 10px;
@@ -99,4 +104,28 @@ button[type="submit"]:hover,
 
 #upload-folder {
   display: none;
+}
+
+.results-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.results-table th {
+  background-color: #f2f2f2;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.results-table tr:hover {
+  background-color: #e9e9e9;
 }
